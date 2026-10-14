@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV Anita</title>
+  
+  <!-- Fuente Google Fonts (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SECCIÓN HERO / ENCABEZADO -->
+  <section class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Título principal -->
+      <h1 class="hero-title">
+        MIS <span class="highlight-xv">XV</span><br>
+        <span class="name">ANITA</span>
+      </h1>
+
+      <!-- Contador / Timer -->
+      <div class="countdown-container">
+        <div class="time-block">
+          <span id="days" class="time-number">00</span>
+          <span class="time-label">DÍAS</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span id="hours" class="time-number">00</span>
+          <span class="time-label">HORAS</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span id="minutes" class="time-number">00</span>
+          <span class="time-label">MINUTOS</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="time-block">
+          <span id="seconds" class="time-number">00</span>
+          <span class="time-label">SEGUNDOS</span>
+        </div>
+      </div>
+
+      <!-- Fecha y Hora -->
+      <p class="event-date">31 DE OCTUBRE | 20:30 HS</p>
+
+    </div>
+  </section>
+
+
+
+
+
+  <section class="phrase-section">
+    <div class="phrase-container">
+      <hr class="divider">
+      <p class="phrase-text">
+        LO MÁS LINDO DE ESTA NOCHE SERÁ PODER COMPARTIRLA CON VOS.
+      </p>
+      <hr class="divider">
+    </div>
+  </section>
+
+
+
+
+
+
+<!-- SECCIÓN UBICACIÓN / DÓNDE -->
+  <section class="location-section">
+    <div class="location-container">
+      
+      <!-- Ícono de ubicación animado (SVG + CSS) -->
+      <div class="location-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </div>
+
+      <h2 class="location-title">¿DÓNDE?</h2>
+      
+      <p class="location-name">ALTOS ÁLAMOS</p>
+      <p class="location-address">Ruta Provincial 1, km 13</p>
+
+      <!-- Botón directo a Google Maps -->
+      <!-- Botón que activa el Modal -->
+<button type="button" id="btn-map" class="btn-location">CÓMO LLEGAR</button>
+
+    </div>
+  </section>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <!-- SECCIÓN REGALOS -->
+  <section class="gifts-section">
+    <div class="gifts-container">
+      
+      <!-- Ícono GIF / SVG animado de Regalo -->
+      <div class="gifts-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 12 20 22 4 22 4 12"></polyline>
+          <rect x="2" y="7" width="20" height="5"></rect>
+          <line x1="12" y1="22" x2="12" y2="7"></line>
+          <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+          <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+        </svg>
+      </div>
+
+      <h2 class="gifts-title">REGALOS</h2>
+      
+      <p class="gifts-message">
+        Si además querés hacerme un regalo, habrá una urna durante la fiesta para dejarlo. Y si te resulta más cómodo, también podés hacerlo de manera virtual.
+      </p>
+
+      <!-- Botón que activa el modal de la cuenta bancaria -->
+      <button type="button" id="btn-account" class="btn-gifts">VER CUENTA</button>
+
+    </div>
+  </section>
+
+  <!-- MODAL DATOS BANCARIOS (Cuentas) -->
+  <div id="account-modal" class="modal-overlay">
+    <div class="account-modal-content">
+      <button type="button" id="close-account-modal" class="close-btn-light">&times;</button>
+      
+      <div class="account-card">
+        <div class="account-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+            <rect x="2" y="7" width="20" height="5"></rect>
+            <line x1="12" y1="22" x2="12" y2="7"></line>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+          </svg>
+        </div>
+        
+        <h3 class="account-title">REGALOS</h3>
+        
+        <div class="account-field">
+          <span class="field-label">ALIAS:</span>
+          <p class="field-value">ana.329</p>
+        </div>
+
+        <div class="account-field">
+          <span class="field-label">CBU:</span>
+          <p class="field-value">0000003100098514790405</p>
+        </div>
+
+        <div class="account-field">
+          <span class="field-label">TITULAR:</span>
+          <p class="field-value">Ana Albornoz Semchuk</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+
+
+
+
+  <!-- SECCIÓN DRESS CODE -->
+  <section class="dresscode-section">
+    <div class="dresscode-container">
+      
+      <!-- Ícono de Diamante con Animación -->
+      <div class="dresscode-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3h12l4 6-10 12L2 9z"></path>
+          <path d="M11 3 8 9l4 12 4-12-3-6"></path>
+          <path d="M2 9h20"></path>
+        </svg>
+      </div>
+
+      <span class="dresscode-label">DRESS CODE</span>
+      <h2 class="dresscode-style">ELEGANTE</h2>
+      <p class="dresscode-subtext">EVITAR COLORES LLAMATIVOS</p>
+      
+      <hr class="dresscode-line">
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- SECCIÓN GALERÍA DE FOTOS -->
+  <section class="gallery-section">
+    <div class="gallery-container">
+      
+      <div class="photo-card">
+        <img src="assets/anita1.jfif" alt="Foto Anita 1" class="gallery-img">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/anita2.jfif" alt="Foto Anita 2" class="gallery-img">
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- SECCIÓN ÁLBUM COMPARTIDO -->
+  <section class="album-section">
+    <div class="album-container">
+      
+      <!-- Ícono de Cámara Fotográfica Animado -->
+      <div class="album-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+          <circle cx="12" cy="13" r="3"></circle>
+        </svg>
+      </div>
+
+      <h2 class="album-title">QUIERO VER TUS FOTOS</h2>
+      
+      <p class="album-message">
+        PUEDEN SUBIR TODAS SUS FOTOS DEL EVENTO A MI ÁLBUM COMPARTIDO
+      </p>
+
+      <!-- Botón al enlace externo (Drive / Google Photos) -->
+      <a href="https://drive.google.com/drive/folders/1w8ex150ajUHs9RoO48CpD19w9V8sDNhQ" target="_blank" rel="noopener noreferrer" class="btn-album">
+        IR AL ÁLBUM
+      </a>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- SECCIÓN RSVP / CONFIRMACIÓN -->
+  <section class="rsvp-section">
+    <div class="rsvp-container">
+      
+      <!-- Ícono de Sobre Animado -->
+      <div class="rsvp-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+
+      <h2 class="rsvp-title">CONFIRMÁ TU ASISTENCIA</h2>
+      <p class="rsvp-deadline">ANTES DEL 19 DE OCTUBRE DEL 2026</p>
+
+      <!-- TARJETA DEL FORMULARIO -->
+      <div class="rsvp-card">
+        <form id="rsvp-form">
+          
+          <!-- Nombre y Apellido -->
+          <div class="form-group">
+            <label for="fullName">Nombre y Apellido *</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Ej: Juan Pérez">
+          </div>
+
+          <!-- Asistencia (Radio Buttons) -->
+          <div class="form-group">
+            <label class="group-label">¿Confirmás tu asistencia? *</label>
+            <div class="radio-options">
+              <label class="radio-container">
+                <input type="radio" name="attendance" value="Si" checked>
+                <span class="custom-radio"></span>
+                ¡Confirmo!
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="attendance" value="No">
+                <span class="custom-radio"></span>
+                No podré asistir
+              </label>
+            </div>
+          </div>
+
+          <!-- Requerimiento de Alimentación (Select) -->
+          <div class="form-group">
+            <label for="diet">¿Algún requerimiento en la alimentación?</label>
+            <select id="diet" name="diet">
+              <option value="Ninguno">Ninguno</option>
+              <option value="Vegetariano">Vegetariano</option>
+              <option value="Vegano">Vegano</option>
+              <option value="Celiaco">Celíaco</option>
+              <option value="Diabetico">Diabético</option>
+              <option value="Hipertenso">Hipertenso</option>
+              <option value="Intolerante a la Lactosa">Intolerante a la lactosa</option>
+            </select>
+          </div>
+
+          <!-- Canción que no puede faltar -->
+          <div class="form-group">
+            <label for="song">¿Qué canción no puede faltar?</label>
+            <input type="text" id="song" name="song" placeholder="Nombre de la canción o artista">
+          </div>
+
+          <!-- Botón de Envío -->
+          <button type="submit" class="btn-rsvp">CONFIRMAR</button>
+
+        </form>
+        
+        <!-- Mensaje de éxito oculto por defecto -->
+        <div id="rsvp-status" class="rsvp-status"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- SECCIÓN FINAL / DESPEDIDA -->
+  <section class="footer-section">
+    <div class="footer-container">
+      <h2 class="footer-text">¡TE ESPERO!</h2>
+    </div>
+  </section>
+  <!-- SECCIÓN CRÉDITOS / MI MARCA -->
+  <section class="branding-section">
+    </section>
+
+
+
+
+  <!-- SECCIÓN CRÉDITOS / MI MARCA -->
+  <section class="branding-section">
+    <div class="branding-container">
+      
+      <p class="branding-text">Si querés tu tarjetita personalizada, ¡mandame un mensaje!</p>
+
+      <!-- Botón WhatsApp (Reemplazá 549XXXXXXXXXX por tu número real) -->
+      <a href="https://wa.me/5492914120752?text=¡Hola!%20Vi%20la%20invitación%20digital%20y%20quisiera%20consultar%20por%20una%20personalizada." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="branding-wa-btn" 
+         aria-label="Contactar por WhatsApp">
+        
+        <!-- Ícono WhatsApp SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+
+      </a>
+
+    </div>
+  </section>
+
+
+
+
+
+<!-- MODAL DE GOOGLE MAPS -->
+<div id="map-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button type="button" id="close-modal" class="close-btn">&times;</button>
+    <div class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3016.8858959126123!2d-62.9192801875832!3d-40.87437821496199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95f69d97c97e2fe9%3A0x987643793df5a4de!2sAltos%20%C3%81lamos%20Eventos!5e0!3m2!1ses!2sar!4v1786149650193!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

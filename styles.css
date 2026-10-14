@@ -1,0 +1,1370 @@
+:root {
+  /* Colores Principales */
+  --bg-dark: #1b4568;        /* Azul oscuro estilo la web de referencia */
+  --bg-light: #ffffff;       /* Blanco puro */
+  
+  /* Detalles en Dorado */
+  --gold-primary: #d4af37;   /* Dorado clásico para títulos, bordes y botones */
+  --gold-light: #e4ce76;     /* Dorado suave / champagne para detalles sutiles */
+  --gold-hover: #b8962e;     /* Dorado un poco más oscuro para cuando pasás el mouse */
+  
+  /* Textos */
+  --text-light: #ffffff;     /* Texto sobre fondo azul */
+  --text-dark: #1b4568;      /* Texto sobre fondo blanco */
+  --text-gold: #d4af37;      /* Textos resaltados o números del timer */
+
+  /* Nuevos Colores Plateados */
+  --silver-primary: #D1D5DB;  /* Color plateado para el fondo de secciones */
+  --silver-light: #E5E7EB;    /* Plateado suave para botones / detalles */
+  --silver-hover: #9CA3AF;    /* Plateado un poco más oscuro para cuando pasás el mouse */
+  
+  /* Fuentes base */
+  --font-title: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Encabezado */
+.hero-section {
+  min-height: 75vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Título */
+.hero-title {
+  color: var(--text-light);
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  line-height: 0.9;
+
+
+/* Sombra sutil de baja opacidad */
+  text-shadow: 
+    0 0 4px rgba(212, 175, 55, 0.4),
+    0 0 10px rgba(212, 175, 55, 0.25),
+    0 0 18px rgba(212, 175, 55, 0.15);
+
+  /* Animación atenuada */
+  animation: gold-glow-soft 3s infinite ease-in-out;
+}
+
+.hero-title .highlight-xv {
+  font-weight: 800; /* XV remarcado */
+}
+
+.hero-title .name {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+/* Respiración de brillo muy tenue */
+@keyframes gold-glow-soft {
+  0%, 100% {
+    text-shadow: 
+      0 0 4px rgba(212, 175, 55, 0.35),
+      0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 6px rgba(255, 223, 118, 0.5),
+      0 0 14px rgba(212, 175, 55, 0.35),
+      0 0 22px rgba(212, 175, 55, 0.15);
+  }
+}
+
+/* Contador */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-number {
+  color: var(--text-light);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.time-label {
+  color: var(--silver-primary);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.separator {
+  color: var(--text-light);
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+/* Fecha y hora destacada */
+.event-date {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  /* Sombra multicapa en blanco suave */
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 18px rgba(255, 255, 255, 0.15);
+
+  /* Animación de pulso continuo */
+  animation: white-glow-soft 3s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+/* Sección Frase */
+.phrase-section {
+  background-color: var(--silver-primary);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.phrase-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--text-dark); /* Línea blanca sutil */
+  margin: 25px auto;
+  width: 80%;
+}
+
+.phrase-text {
+  color: var(--text-dark); /* Texto en azul */
+  font-size: 1.10rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN UBICACIÓN Y MODAL MAPA
+   ========================================== */
+
+.location-section {
+  background-color: var(--bg-dark);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.location-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.location-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  color: var(--text-light);
+  animation: bounce 2s infinite;
+}
+
+.location-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-12px); }
+  60% { transform: translateY(-6px); }
+}
+
+.location-title {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.location-name {
+  color: var(--silver-light);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.location-address {
+  color: var(--silver-light);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Unificación de estilos para el botón */
+.btn-location {
+  display: inline-block;
+  color: var(--text-light);
+  border: 1px solid var(--silver-primary);
+  background: transparent;
+  padding: 12px 35px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-location:hover {
+  background-color: var(--text-light);
+  color: var(--bg-dark);
+}
+
+/* Modal Overlay flotante */
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 9999 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.modal-overlay.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 70vh;
+  max-height: 500px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN REGALOS Y MODAL DE CUENTA
+   ========================================== */
+
+.gifts-section {
+  background-color: var(--bg-dark); /* Fondo Azul */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gifts-container {
+  max-width: 550px;
+  width: 100%;
+}
+
+.gifts-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  color: var(--text-light);
+  animation: pulse-gift 2.5s infinite ease-in-out;
+}
+
+.gifts-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes pulse-gift {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.gifts-title {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.gifts-message {
+  color: var(--silver-primary);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.btn-gifts {
+  display: inline-block;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+  background: transparent;
+  padding: 12px 35px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gifts:hover {
+  background-color: var(--text-light);
+  color: var(--bg-dark);
+}
+
+/* Modal de Datos Bancarios */
+.account-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 550px;
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 30px 20px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.close-btn-light {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.account-card {
+  padding: 10px;
+}
+
+.account-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px auto;
+  color: var(--text-light);
+}
+
+.account-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.account-title {
+  color: var(--text-light);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.account-field {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  display: block;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.field-value {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN DRESS CODE
+   ========================================== */
+
+.dresscode-section {
+  background-color: var(--silver-primary); /* Fondo Plateado */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dresscode-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.dresscode-icon {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 15px auto;
+  color: var(--bg-dark); /* Ícono blanco */
+  animation: shine 3s infinite ease-in-out;
+}
+
+.dresscode-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación sutil de brillo/rotación leve */
+@keyframes shine {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+.dresscode-label {
+  display: block;
+  color: var(--bg-dark);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dresscode-style {
+  color: var(--text-dark);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.dresscode-subtext {
+  color: var(--text-dark);
+  font-size: 0.80rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.dresscode-line {
+  border: none;
+  border-top: 1px solid var(--bg-dark); /* Línea blanca decorativa */
+  width: 120px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN GALERÍA DE FOTOS
+   ========================================== */
+
+.gallery-section {
+  background-color: var(--bg-dark); /* Fondo Azul */
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 650px; /* Ancho máximo para mantener las fotos centralizadas y moderadas */
+  width: 100%;
+}
+
+.photo-card {
+  flex: 1;
+  max-width: 280px; /* Limita el ancho individual de cada foto vertical */
+  aspect-ratio: 2 / 3; /* Forzado de proporción vertical elegante (vertical 2:3) */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px); /* Efecto leve de elevación al pasar el mouse */
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta suavemente la imagen sin deformarla */
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN ÁLBUM COMPARTIDO
+   ========================================== */
+
+.album-section {
+  background-color: var(--bg-dark); /* Fondo Azul */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.album-container {
+  max-width: 550px;
+  width: 100%;
+}
+
+.album-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  color: var(--text-light); /* Ícono blanco */
+  animation: camera-pop 3s infinite ease-in-out;
+}
+
+.album-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación de leve pulso/flash para la cámara */
+@keyframes camera-pop {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.album-title {
+  color: var(--text-light);
+  font-size: 1.7rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.album-message {
+  color: var(--silver-primary);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* Botón Ir al Álbum */
+.btn-album {
+  display: inline-block;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+  background: transparent;
+  padding: 12px 35px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-album:hover {
+  background-color: var(--text-light);
+  color: var(--bg-dark);
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN RSVP / CONFIRMACIÓN
+   ========================================== */
+
+.rsvp-section {
+  background-color: var(--bg-dark); /* Fondo Azul */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rsvp-container {
+  max-width: 550px;
+  width: 100%;
+}
+
+.rsvp-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  color: var(--te);
+  animation: float-envelope 3s infinite ease-in-out;
+}
+
+.rsvp-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float-envelope {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.rsvp-title {
+  color: var(--text-light);
+  font-size: 1.7rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.rsvp-deadline {
+  color: var(--silver-primary); /* Resaltado en Dorado */
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+/* Tarjeta / Carta Formulario */
+.rsvp-card {
+  background-color: #27384c; /* Azul intermedio contrastante */
+  border: 1px solid rgba(212, 175, 55, 0.4); /* Borde sutil dorado */
+  border-radius: 12px;
+  padding: 35px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label, 
+.group-label {
+  display: block;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Inputs de texto y Select */
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--text-light);
+  padding: 10px 5px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  border-bottom-color: var(--gold-primary);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo para las opciones dentro del desplegable */
+.form-group select option {
+  background-color: #27384c;
+  color: var(--text-light);
+}
+
+/* Opciones Radio (Confirmo / No podré) */
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-container input {
+  display: none; /* Oculta el radio nativo */
+}
+
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-light);
+  border-radius: 50%;
+  margin-right: 12px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radio-container input:checked ~ .custom-radio {
+  border-color: var(--gold-primary);
+}
+
+.radio-container input:checked ~ .custom-radio::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold-primary);
+  border-radius: 50%;
+}
+
+/* Botón de Confirmación */
+.btn-rsvp {
+  width: 100%;
+  background-color: var(--silver-primary);
+  color: var(--text-dark);
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-rsvp:hover {
+  background-color: var(--text-dark);
+  color: var(--silver-primary);
+  transform: translateY(-2px);
+}
+
+/* Mensaje de respuesta */
+.rsvp-status {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   SECCIÓN FINAL / DESPEDIDA
+   ========================================== */
+
+.footer-section {
+  background-color: var(--bg-dark);
+  padding: 50px 20px 45px 20px; /* Más espacio arriba y abajo para que respire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-bottom: none !important; /* Desactiva la línea divisoria general de las secciones */
+}
+
+.footer-section::after {
+  display: none !important; /* Elimina pseudo-elementos globales de división */
+}
+
+.footer-container {
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  padding: 22px 0; /* Espacio interno entre el texto y sus dos líneas */
+}
+
+/* Línea Superior de "¡TE ESPERO!" */
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background-color: var(--silver-primary, #D1D5DB);
+  opacity: 0.7;
+}
+
+/* Línea Inferior de "¡TE ESPERO!" */
+.footer-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background-color: var(--silver-primary, #D1D5DB);
+  opacity: 0.7;
+}
+
+.footer-text {
+  color: var(--text-light);
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0;
+  
+  /* Glow blanco */
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 18px rgba(255, 255, 255, 0.15);
+  animation: white-glow-soft 3s infinite ease-in-out;
+}
+
+/* Respiración de brillo blanco */
+@keyframes white-glow-soft {
+  0%, 100% {
+    text-shadow: 
+      0 0 4px rgba(255, 255, 255, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.8),
+      0 0 16px rgba(255, 255, 255, 0.45),
+      0 0 24px rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+/* Separador plateado centrado entre secciones */
+section {
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* Ancho de la línea (70% de la pantalla) */
+  height: 1px;
+  background-color: var(--silver-primary); /* Color plateado #D1D5DB */
+}
+
+/* Quitamos la línea de la última sección */
+section:last-of-type::after {
+  display: none;
+}
+
+
+
+
+
+
+.branding-section {
+  background-color: var(--silver-primary, #D1D5DB);
+  padding: 10px 20px; /* Reducimos el padding de 25px a solo 10px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding-container {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.branding-text {
+  color: var(--bg-dark, #1b4568);
+  font-size: 0.8rem; /* Fuente un toque más discreta */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Botón Circular WhatsApp compacto */
+.branding-wa-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px; /* Reducimos de 42px a 32px */
+  height: 32px;
+  min-width: 32px;
+  background-color: var(--bg-dark, #1b4568);
+  color: var(--silver-primary, #D1D5DB);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.branding-wa-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.branding-wa-btn:hover {
+  transform: scale(1.1);
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+
+
+
+
+/* 1. GLOW DORADO PARA TODOS LOS ÍCONOS DORADOS */
+.location-icon svg,
+.gifts-icon svg,
+.album-icon svg,
+.rsvp-icon svg {
+  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.6))
+          drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+/* 2. GLOW AZUL ESPECÍFICO PARA EL ÍCONO AZUL */
+.dresscode-icon svg {
+  /* Usamos un azul luminoso para que el brillo resalte */
+  filter: drop-shadow(0 0 4px rgba(65, 145, 225, 0.8))
+          drop-shadow(0 0 10px rgba(65, 145, 225, 0.4));
+}
+
+
+/* ==========================================
+   CONFIGURACIÓN RESPONSIVE GLOBAL (CELULARES)
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* --- 1. AJUSTES GENERALES Y SECCIONES --- */
+  section {
+    padding: 45px 15px !important; /* Espaciado vertical más compacto */
+  }
+
+  /* --- 2. HERO / INICIO --- */
+
+  .hero-section {
+    min-height: auto !important;     /* Quita el alto forzado del 100% de la pantalla */
+    padding: 60px 20px 40px 20px !important; /* Reduce los espacios muertos de azul arriba y abajo */
+  }
+  .hero-title {
+    font-size: 2.2rem !important;    /* "MIS XV" más destacado */
+    letter-spacing: 3px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .hero-title .name {
+    font-size: 3.2rem !important;    /* "ANITA" mucho más grande y protagónico */
+    letter-spacing: 4px !important;
+    margin-top: 5px !important;
+  }
+
+  /* Contador Regresivo */
+  .countdown-container {
+    gap: 12px !important;
+    margin-top: 30px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .time-box {
+    min-width: 65px !important;
+    padding: 10px 6px !important;
+  }
+
+  .time-number {
+    font-size: 2rem !important;       /* Números del reloj bien visibles */
+  }
+
+  .separator {
+    font-size: 1.5rem !important;
+  }
+
+  .time-label {
+    font-size: 0.65rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Fecha y Hora */
+  .hero-date {
+    font-size: 1rem !important;       /* "31 DE OCTUBRE | 20:30 HS" más legible */
+    letter-spacing: 2px !important;
+  }
+
+  /* --- 3. FRASE DE BIENVENIDA --- */
+  .phrase-text {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    letter-spacing: 1px !important;
+  }
+
+  .divider {
+    width: 85% !important;
+  }
+
+  /* --- 4. UBICACIÓN / DÓNDE --- */
+  .location-title {
+    font-size: 1.4rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  .location-name {
+    font-size: 1.1rem !important;
+  }
+
+  .location-address {
+    font-size: 0.8rem !important;
+    margin-bottom: 25px !important;
+  }
+
+  .btn-location {
+    padding: 10px 25px !important;
+    font-size: 0.8rem !important;
+    width: 80% !important;
+    max-width: 250px !important;
+  }
+
+  /* --- 5. REGALOS --- */
+  .gifts-title {
+    font-size: 1.4rem !important;
+  }
+
+  .gifts-message {
+    font-size: 0.8rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 25px !important;
+  }
+
+  .btn-gifts {
+    padding: 10px 25px !important;
+    font-size: 0.8rem !important;
+    width: 80% !important;
+    max-width: 250px !important;
+  }
+
+  /* Modal Cuenta Bancaria */
+  .account-modal-content {
+    width: 92% !important;
+    padding: 25px 15px !important;
+  }
+
+  .account-title {
+    font-size: 1.2rem !important;
+  }
+
+  .field-label {
+    font-size: 0.75rem !important;
+  }
+
+  .field-value {
+    font-size: 0.85rem !important;
+  }
+
+  /* --- 6. DRESS CODE --- */
+  .dresscode-label {
+    font-size: 0.75rem !important;
+  }
+
+  .dresscode-style {
+    font-size: 1.3rem !important;
+  }
+
+  .dresscode-subtext {
+    font-size: 0.7rem !important;
+  }
+
+  .dresscode-line {
+    width: 90px !important;
+  }
+
+  /* --- 7. GALERÍA DE FOTOS --- */
+  .gallery-container {
+    gap: 10px !important;
+    max-width: 100% !important;
+  }
+
+  .photo-card {
+    max-width: 48% !important; /* Las dos fotos van a quedar perfectamente alineadas a la par */
+    border-radius: 6px !important;
+  }
+
+  /* --- 8. ÁLBUM COMPARTIDO --- */
+  .album-title {
+    font-size: 1.3rem !important;
+  }
+
+  .album-message {
+    font-size: 0.75rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .btn-album {
+    padding: 10px 25px !important;
+    font-size: 0.8rem !important;
+    width: 80% !important;
+    max-width: 250px !important;
+  }
+
+  /* --- 9. RSVP / FORMULARIO --- */
+  .rsvp-title {
+    font-size: 1.3rem !important;
+  }
+
+  .rsvp-deadline {
+    font-size: 0.75rem !important;
+    margin-bottom: 25px !important;
+  }
+
+  .rsvp-card {
+    padding: 25px 15px !important;
+    border-radius: 10px !important;
+  }
+
+  .form-group label, 
+  .group-label {
+    font-size: 0.8rem !important;
+  }
+
+  .form-group input[type="text"],
+  .form-group select {
+    font-size: 0.85rem !important;
+  }
+
+  .radio-container {
+    font-size: 0.85rem !important;
+  }
+
+  .btn-rsvp {
+    padding: 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* --- 10. MODAL DE MAPA --- */
+  .modal-content {
+    width: 95% !important;
+    height: 60vh !important;
+  }
+
+  /* --- 11. FOOTER / TE ESPERO --- */
+  /* Footer / Te Espero Responsive */
+  .footer-section {
+    padding: 30px 15px 15px 15px !important; /* Mantiene un espacio azul chiquito abajo */
+  }
+
+  .footer-container {
+    padding: 20px 0 !important;
+  }
+
+  .footer-container::before,
+  .footer-container::after {
+    width: 80% !important; /* Ajusta el largo de las líneas en celular */
+  }
+
+  .footer-text {
+    font-size: 1.5rem !important;
+    letter-spacing: 3px !important;
+  }
+
+  /* Branding Responsive */
+  .branding-section {
+    padding: 8px 15px !important; /* Mínimo espacio arriba y abajo */
+  }
+
+  .branding-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 4px !important; /* Muy poca separación entre la frase y el ícono */
+  }
+
+  .branding-text {
+    font-size: 0.7rem !important; /* Texto bien sutil */
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  .branding-wa-btn {
+    width: 28px !important; /* Ícono WhatsApp de tamaño compacto */
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+
+  .branding-wa-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}
